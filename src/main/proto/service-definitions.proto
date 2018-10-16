@@ -1,0 +1,21 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package io.vertx.grpc;
+
+message ClientRequest {
+
+  string id = 1;
+
+}
+
+message ClientResponse {
+
+  string body = 1;
+
+}
+
+service Service {
+
+  rpc connect(stream ClientRequest) returns (ClientResponse);
+
+}
